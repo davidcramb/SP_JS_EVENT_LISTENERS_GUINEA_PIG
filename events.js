@@ -15,32 +15,35 @@ var h1Hover = document.querySelector('h1');
 h1Hover.addEventListener('mouseover', hoverIn, false);
 h1Hover.addEventListener('mouseout', hoverOut, false);
 // Changes outputEl text when the mouse hovers on and out of the H1 Element
-function hoverIn (h1Hover) {
+function hoverIn () {
   outputEl.innerHTML = 'You moved your mouse over the header.';
 };
-function hoverOut (h1Hover) {
+function hoverOut () {
   outputEl.innerHTML = 'You left me!! For a younger element, too!';
 };
-
+// Grabs the Input Text element
 var userInput = document.getElementById('keypress-input');
-function getInputValue (input) {
-  input = input.value;
-  return input;
-};
+// Adds a keyboard event listener on userInput, to run the addtoDOM() function
 userInput.addEventListener('keypress', addtoDOM, false);
+
+// Outputs the text from the input field and mirrors it to the output element (sort of)
 function addtoDOM () {
+    function getInputValue (input) {
+    input = input.value;
+    return input;
+    };
   var input = getInputValue(userInput);
   outputEl.innerHTML = input;
 };
 
-// userInput.addEventListener('keypress', function() {
-//   userInput = userInput.value;
+var blueButton = document.getElementById('add-color');
+blueButton.addEventListener('click', function() {
+  var blue = document.getElementById('guinea-pig');
+  blue.classList.add('bluetext');
+  console.log(blue)
+});
 
-// });
-// function mirror(userInput) {
-//   tapTap = userInput.value;
-//   outputEl += tapTap
-// };
+
 
   
 
