@@ -36,11 +36,27 @@ function addtoDOM () {
   outputEl.innerHTML = input;
 };
 
+//Makes guinea-pig id text blue
 var blueButton = document.getElementById('add-color');
 blueButton.addEventListener('click', function() {
   var blue = document.getElementById('guinea-pig');
-  blue.classList.add('bluetext');
-  console.log(blue)
+  blue.classList.toggle('bluetext');
+});
+var hulkButton = document.getElementById('make-large');
+hulkButton.addEventListener('click', function() {
+  var hulk = document.getElementById('guinea-pig');
+  hulk.classList.toggle('hulk');
+});
+
+var captureButton = document.getElementById('add-border');
+captureButton.addEventListener('click', function() {
+  var border = document.getElementById('guinea-pig');
+  border.classList.toggle('addborder');
+});
+var roundButton = document.getElementById('add-rounding');
+roundButton.addEventListener('click', function() {
+  var rounding = document.getElementById('guinea-pig');
+  rounding.classList.toggle('rounding');
 });
 
 
